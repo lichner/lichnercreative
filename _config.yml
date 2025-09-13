@@ -1,0 +1,54 @@
+# Jekyll Configuration for Lichner Creative
+title: "Lichner Creative"
+description: "Creative digital solutions and web development services"
+url: "https://your-username.github.io" # Replace with your GitHub Pages URL
+baseurl: "/your-repo-name" # Replace with your repo name
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+
+# Site settings
+email: contact@lichnercreative.com.au
+phone: "+61 XXX XXX XXX"
+address: "Australia"
+
+# Social links (optional)
+social:
+  github: lichner
+  linkedin: # your-linkedin-username
+  twitter: # your-twitter-username

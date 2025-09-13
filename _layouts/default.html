@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  
+  <!-- SEO -->
+  {% seo %}
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+</head>
+<body>
+  <!-- Sparkle Container -->
+  <div class="sparkle-container" id="sparkleContainer"></div>
+  
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="logo">
+        {{ site.title }}
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="social-links">
+        {% if site.social.github %}
+          <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+          </a>
+        {% endif %}
+        {% if site.social.linkedin %}
+          <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        {% endif %}
+        {% if site.social.twitter %}
+          <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener">
+            <i class="fab fa-twitter"></i>
+          </a>
+        {% endif %}
+      </div>
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Sparkle animation
+    function createSparkle() {
+      const sparkleContainer = document.getElementById('sparkleContainer');
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      
+      // Random position
+      sparkle.style.left = Math.random() * window.innerWidth + 'px';
+      sparkle.style.top = Math.random() * window.innerHeight + 'px';
+      
+      // Random animation duration
+      sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      
+      sparkleContainer.appendChild(sparkle);
+      
+      // Remove sparkle after animation
+      setTimeout(() => {
+        if (sparkle.parentNode) {
+          sparkle.parentNode.removeChild(sparkle);
+        }
+      }, 5000);
+    }
+
+    // Create sparkles periodically
+    setInterval(createSparkle, 500);
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const animateElements = document.querySelectorAll('.hero-content');
+      animateElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
