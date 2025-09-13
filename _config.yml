@@ -1,8 +1,8 @@
 # Jekyll Configuration for Lichner Creative
 title: "Lichner Creative"
 description: "Creative digital solutions and web development services"
-url: "https://your-username.github.io" # Replace with your GitHub Pages URL
-baseurl: "/your-repo-name" # Replace with your repo name
+url: "https://lichner.github.io" # GitHub Pages URL
+baseurl: "/lichnercreative" # Repository name
 
 # Build settings
 markdown: kramdown
