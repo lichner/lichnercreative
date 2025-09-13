@@ -20,28 +20,12 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.scss' | relative_url }}">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
 </head>
 <body>
   <!-- Sparkle Container -->
   <div class="sparkle-container" id="sparkleContainer"></div>
   
-  <!-- Header -->
-  <header class="site-header" id="header">
-    <div class="container">
-      <a href="{{ '/' | relative_url }}" class="logo">
-        {{ site.title }}
-      </a>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
   <!-- Main Content -->
   <main>
@@ -74,15 +58,6 @@
 
   <!-- JavaScript -->
   <script>
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
 
     // Sparkle animation
     function createSparkle() {
