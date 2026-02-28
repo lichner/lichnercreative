@@ -1,0 +1,180 @@
+// ─── Skip link ───
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $space-md;
+  background: $color-accent;
+  color: $color-white;
+  padding: $space-sm $space-md;
+  z-index: 100;
+  border-radius: 0 0 4px 4px;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// ─── Hamburger nav (CSS-only checkbox hack) ───
+.nav-toggle {
+  display: none; // hidden checkbox
+}
+
+.nav-toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+
+  @include respond-to(md) {
+    display: none; // hide hamburger on desktop
+  }
+}
+
+// Hamburger icon (three lines)
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: $color-text;
+  transition: background 0.2s;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: $color-text;
+    transition: transform 0.2s;
+  }
+
+  &::before { top: -7px; }
+  &::after  { top: 7px; }
+}
+
+// Transform hamburger to X when open
+.nav-toggle:checked ~ .nav-toggle-label .hamburger {
+  background: transparent;
+
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+// Navigation menu
+.site-nav {
+  display: none;
+  position: absolute;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  background: darken($color-bg, 5%);
+  padding: $space-md;
+  z-index: 50;
+
+  @include respond-to(md) {
+    display: block;
+    position: static;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+// Show menu when checkbox is checked (mobile)
+.nav-toggle:checked ~ .site-nav {
+  display: block;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    gap: $space-lg;
+  }
+}
+
+.site-nav__link {
+  display: block;
+  padding: $space-sm;
+  min-height: 44px;
+  line-height: 28px; // 28 + 8*2 padding = 44px touch target
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+  &[aria-current="page"] {
+    color: $color-accent;
+  }
+}
+
+// ─── Focus indicators ───
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid $color-accent;
+  outline-offset: 2px;
+}
+
+// ─── Hero section ───
+.hero {
+  text-align: center;
+  max-width: $max-width;
+  width: 100%;
+}
+
+.hero__logo {
+  max-width: 400px;
+  margin: 0 auto $space-lg;
+
+  @include respond-to(md) {
+    max-width: 600px;
+  }
+}
+
+// ─── Contact links ───
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-md;
+
+  @include respond-to(sm) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: $space-sm $space-md;
+  min-height: 44px;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,19 @@
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+  <span class="hamburger"></span>
+</label>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <ul class="site-nav__list">
+    {% for item in site.data.navigation %}
+      <li>
+        <a href="{{ item.url }}"
+           class="site-nav__link"
+           {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+           {% if page.url == item.url %}aria-current="page"{% endif %}>
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

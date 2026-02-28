@@ -1,0 +1,35 @@
+// Colors — extracted from source site
+$color-bg:      #39444E;
+$color-text:    #DCDCDC;
+$color-accent:  #E8542A; // Orange from logo chevron — hover/focus
+$color-white:   #FFFFFF;
+
+// Fonts
+$font-stack: Arial, Helvetica, sans-serif;
+
+// Spacing
+$space-xs:  0.25rem;
+$space-sm:  0.5rem;
+$space-md:  1rem;
+$space-lg:  2rem;
+$space-xl:  4rem;
+
+// Layout
+$max-width: 960px;
+$header-height: 60px;
+
+// Breakpoints (mobile-first)
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+$bp-xxl: 1536px;
+
+// Mixins
+@mixin respond-to($bp) {
+  @if $bp == sm  { @media (min-width: $bp-sm)  { @content; } }
+  @if $bp == md  { @media (min-width: $bp-md)  { @content; } }
+  @if $bp == lg  { @media (min-width: $bp-lg)  { @content; } }
+  @if $bp == xl  { @media (min-width: $bp-xl)  { @content; } }
+  @if $bp == xxl { @media (min-width: $bp-xxl) { @content; } }
+}

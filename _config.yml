@@ -1,0 +1,39 @@
+title: "Lichner Creative Pty Ltd"
+description: "Lichner Creative — digital consulting and creative services based in Australia."
+baseurl: ""
+url: "https://lichnercreative.com.au"
+timezone: "Australia/Perth"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - prompt_initial.md
+  - "*.sh"
+  - vendor
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
