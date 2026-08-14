@@ -15,12 +15,13 @@ with a career in enterprise software since 2000. His first decade was
 spent building production systems in Europe, including for one of
 Germany's leading car makers. In Perth he led the Modern Applications
 practice and the Data + AI and Integration business at Empired across
-Australia and NZ, and after its acquisition served as Director of
+Australia and New Zealand, and after its acquisition served as Director of
 Insights &amp; Data and Microsoft Solution Specialist Lead ANZ at
 Capgemini.
 
 Our expertise runs deep across Microsoft, Azure and Databricks: cloud
-platforms built secure by design, custom software with quality engineered
+platforms built secure by design, API-led integration between the
+systems businesses already run, custom software with quality engineered
 in, delivery pipelines and infrastructure as code, and production AI
 systems with proper guardrails. We work with AI-assisted delivery every
 day and ship real systems with it.

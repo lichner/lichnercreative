@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "Cloud solutions architecture, software development, DevOps and platform engineering, automation and AI. Perth-based IT consulting across Microsoft, Azure and Databricks."
+description: "Cloud architecture, integration and data foundations, software development, DevOps and automation with AI. Perth-based IT consulting across Microsoft, Azure and Databricks."
 permalink: /services/
 ---
 
@@ -46,6 +46,26 @@ the monitoring to run production with confidence.
 For organisations at scale we design enterprise AI and machine-learning
 platforms on Azure and Databricks: secure by design, governed access to
 AI models with real cost control, everything delivered as code.
+
+## Integration and data foundations {#integration}
+
+Connected systems and trusted data. Without them, AI has nothing
+reliable to work with.
+
+We design integration the way the leading platforms intend: APIs built
+as reusable building blocks, each system connected once and reused
+everywhere, with clear contracts between them. Event-driven where
+timeliness matters, batch where volume wins, always governed, secured
+and monitored.
+
+The same discipline applies to data. One source of truth per fact,
+clean flows between systems, and quality checked at the boundaries.
+When a customer, a job or an invoice means the same thing in every
+system, reporting gets easy and AI gets useful.
+
+Years of leading integration practices for enterprises across Australia
+and New Zealand sit behind this service. It is the least visible work we do, and
+the work with the longest payoff.
 
 ## Automation and AI {#ai}
 

@@ -304,6 +304,17 @@ input:focus {
   background: $color-bg;
 }
 
+// Foundation card spans the full row under the 2x2 grid
+.card--wide {
+  @include respond-to(md) {
+    grid-column: 1 / -1;
+
+    p {
+      max-width: 42rem;
+    }
+  }
+}
+
 .card__link {
   margin-top: $space-md;
   color: $color-accent-text;
