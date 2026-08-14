@@ -34,4 +34,4 @@ people run. If your business outgrows them, we build the next stage too.
 We work in English and German. Based in Perth, working across WA and
 remote.
 
-[Book a conversation](/contact/){: .btn}
+[Get in touch](/contact/){: .btn}

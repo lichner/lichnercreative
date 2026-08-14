@@ -86,4 +86,4 @@ advisor, not a dependency.
 
 ## Ready to talk?
 
-[Book a conversation](/contact/){: .btn}
+[Get in touch](/contact/){: .btn}
