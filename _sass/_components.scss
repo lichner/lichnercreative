@@ -114,11 +114,11 @@
 
   &:hover,
   &:focus {
-    color: $color-accent;
+    color: $color-accent-text;
   }
 
   &[aria-current="page"] {
-    color: $color-accent;
+    color: $color-accent-text;
   }
 }
 
@@ -130,19 +130,224 @@ input:focus {
   outline-offset: 2px;
 }
 
-// ─── Hero section ───
-.hero {
-  text-align: center;
-  max-width: $max-width;
-  width: 100%;
+// ─── Buttons ───
+.btn {
+  display: inline-block;
+  background: $color-accent;
+  color: $color-white;
+  font-weight: 700;
+  font-size: 1.17rem; // >=14pt bold qualifies as WCAG large text
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  min-height: 44px;
+  transition: background 0.2s, transform 0.1s;
+
+  &:hover,
+  &:focus {
+    background: lighten($color-accent, 6%);
+  }
 }
 
-.hero__logo {
-  max-width: 400px;
-  margin: 0 auto $space-lg;
+.btn--ghost {
+  background: transparent;
+  border: 2px solid $color-accent;
+  color: $color-text;
+
+  &:hover,
+  &:focus {
+    background: rgba(232, 84, 42, 0.12);
+    color: $color-white;
+  }
+}
+
+// ─── Section blocks ───
+.section {
+  padding: $space-xl 0;
+}
+
+// Alt bands carry a whisper-level dot grid for texture
+.section--alt {
+  background-color: $color-bg-alt;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.section__kicker {
+  color: $color-accent-text;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  margin-bottom: $space-sm;
+}
+
+.section__lead {
+  max-width: 42rem;
+  margin-top: $space-md;
+  color: $color-text;
+}
+
+// ─── Hero ───
+// Faint oversized ">_" prompt glyph from the logo, bleeding off the right edge.
+// Kept at 3-5% opacity so content stays in charge.
+.hero {
+  text-align: left;
+  padding: $space-xl 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M5,20.1l7.4-7.4l26.1,26.1l7.5,7.4l-7.5,7.4L12.4,79.7L5,72.3l26.1-26.1L5,20.1z' fill='rgba(255,255,255,0.045)'/%3E%3Cpath d='M95,87.3V75.7H48.8v11.6H95z' fill='rgba(232,84,42,0.10)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right -5rem top 1rem;
+  background-size: 13rem auto;
 
   @include respond-to(md) {
-    max-width: 600px;
+    padding: 5rem 0;
+    background-position: right -12rem center;
+    background-size: 34rem auto;
+  }
+
+  @include respond-to(xl) {
+    background-position: right -7rem center;
+  }
+}
+
+.hero__title {
+  max-width: 16ch;
+}
+
+.hero__sub {
+  max-width: 40rem;
+  margin-top: $space-md;
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  color: $color-text;
+}
+
+.hero__cta {
+  margin-top: $space-lg;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+}
+
+// ─── Step list (How we work) ───
+.steps {
+  counter-reset: step;
+  display: grid;
+  gap: $space-lg;
+  margin-top: $space-lg;
+  padding: 0;
+  list-style: none;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.steps__item {
+  counter-increment: step;
+  border-top: 3px solid $color-accent;
+  padding-top: $space-md;
+
+  &::before {
+    content: "0" counter(step);
+    display: block;
+    font-weight: 700;
+    color: $color-accent-text;
+    font-size: 0.9rem;
+    margin-bottom: $space-xs;
+  }
+
+  h3 {
+    margin-bottom: $space-xs;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $color-muted;
+  }
+}
+
+// ─── Cards (services summary) ───
+.cards {
+  display: grid;
+  gap: $space-md;
+  margin-top: $space-lg;
+  padding: 0;
+  list-style: none;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: $color-bg-alt;
+  border-radius: 6px;
+  padding: $space-lg $space-md;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    color: $color-muted;
+    font-size: 0.95rem;
+    flex: 1;
+  }
+}
+
+.section--alt .card {
+  background: $color-bg;
+}
+
+.card__link {
+  margin-top: $space-md;
+  color: $color-accent-text;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    color: lighten($color-accent-text, 8%);
+  }
+}
+
+// ─── Credibility list ───
+.cred {
+  list-style: none;
+  padding: 0;
+  margin-top: $space-lg;
+  display: grid;
+  gap: $space-md;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cred__item {
+  padding-left: $space-md;
+  border-left: 3px solid $color-accent;
+  color: $color-text;
+}
+
+// ─── CTA band ───
+// Soft orange glow rising from the bottom edge, 6% at its strongest
+.cta-band {
+  text-align: center;
+  background-image: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(232, 84, 42, 0.06), transparent 70%);
+
+  .btn {
+    margin-top: $space-lg;
+  }
+
+  p {
+    max-width: 38rem;
+    margin: $space-md auto 0;
+    color: $color-muted;
   }
 }
 
@@ -150,12 +355,12 @@ input:focus {
 .contact-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: $space-md;
+  margin-top: $space-lg;
 
   @include respond-to(sm) {
     flex-direction: row;
-    justify-content: center;
   }
 }
 
@@ -166,10 +371,13 @@ input:focus {
   padding: $space-sm $space-md;
   min-height: 44px;
   transition: color 0.2s;
+  border: 1px solid rgba(220, 220, 220, 0.25);
+  border-radius: 4px;
 
   &:hover,
   &:focus {
-    color: $color-accent;
+    color: $color-accent-text;
+    border-color: $color-accent;
   }
 
   img {

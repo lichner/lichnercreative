@@ -1,11 +1,14 @@
 // Colors — extracted from source site
 $color-bg:      #39444E;
+$color-bg-alt:  #313B44;
 $color-text:    #DCDCDC;
+$color-muted:   #A8B0B8;
 $color-accent:  #E8542A; // Orange from logo chevron — hover/focus
+$color-accent-text: #FF9573; // Accessible tint for orange TEXT on dark (4.6:1)
 $color-white:   #FFFFFF;
 
 // Fonts
-$font-stack: Arial, Helvetica, sans-serif;
+$font-stack: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
 
 // Spacing
 $space-xs:  0.25rem;

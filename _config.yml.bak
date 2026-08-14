@@ -1,16 +1,8 @@
 title: "Lichner Creative Pty Ltd"
-description: "Perth-based IT consulting. Cloud architecture, software development, DevOps and automation with AI. Deep expertise across Microsoft, Azure and Databricks."
+description: "Lichner Creative — digital consulting and creative services based in Australia."
 baseurl: ""
 url: "https://lichnercreative.com.au"
 timezone: "Australia/Perth"
-lang: en_AU
-
-# Used by jekyll-seo-tag for Organization structured data
-logo: /assets/images/apple-touch-icon.png
-social:
-  name: Lichner Creative Pty Ltd
-  links:
-    - https://www.linkedin.com/company/lichner-creative/
 
 # Build settings
 markdown: kramdown
@@ -31,7 +23,6 @@ exclude:
   - prompt_initial.md
   - "*.sh"
   - vendor
-  - _config.yml.bak
 
 # Plugins
 plugins:
@@ -46,4 +37,3 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      image: /assets/images/og-image.png

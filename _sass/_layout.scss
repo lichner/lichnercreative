@@ -16,6 +16,7 @@ body {
   justify-content: space-between;
   padding: $space-sm $space-md;
   min-height: $header-height;
+  position: relative;
 
   @include respond-to(md) {
     padding: $space-sm $space-lg;
@@ -24,18 +25,18 @@ body {
 
 .site-logo {
   display: block;
-  max-width: 200px;
+  max-width: 180px;
 
   img {
-    width: 200px;
+    width: 180px;
     height: auto;
   }
 
   @include respond-to(md) {
-    max-width: 280px;
+    max-width: 220px;
 
     img {
-      width: 280px;
+      width: 220px;
     }
   }
 }
@@ -43,16 +44,87 @@ body {
 // Main content — flex: 1 pushes footer down
 .site-main {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+}
+
+// Shared content container
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
   padding: $space-lg $space-md;
+
+  @include respond-to(md) {
+    padding: $space-xl $space-lg;
+  }
+}
+
+// Standalone pages (Services, About, Contact)
+// Two prompt-mark watermark layers: one top right below the header line,
+// one mirrored bottom left, fainter. Both scale down for mobile instead
+// of disappearing.
+.page {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M5,20.1l7.4-7.4l26.1,26.1l7.5,7.4l-7.5,7.4L12.4,79.7L5,72.3l26.1-26.1L5,20.1z' fill='rgba(255,255,255,0.03)'/%3E%3Cpath d='M95,87.3V75.7H48.8v11.6H95z' fill='rgba(232,84,42,0.06)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='scale(-1,1) translate(-100,0)'%3E%3Cpath d='M5,20.1l7.4-7.4l26.1,26.1l7.5,7.4l-7.5,7.4L12.4,79.7L5,72.3l26.1-26.1L5,20.1z' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M95,87.3V75.7H48.8v11.6H95z' fill='rgba(232,84,42,0.04)'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right -3.5rem top 1.5rem, left -3rem bottom -2rem;
+  background-size: 11rem auto, 9rem auto;
+
+  @include respond-to(md) {
+    background-position: right -5rem top 2.5rem, left -6rem bottom -3rem;
+    background-size: 20rem auto, 16rem auto;
+  }
+
+  h2 {
+    margin-top: $space-xl;
+    padding-bottom: $space-sm;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right, rgba(232, 84, 42, 0.3), transparent 60%) 1;
+  }
+
+  h3 {
+    margin-top: $space-lg;
+  }
+
+  p, ul, ol {
+    margin-top: $space-md;
+    max-width: 42rem;
+  }
+
+  ul, ol {
+    padding-left: 1.25rem;
+  }
+
+  li + li {
+    margin-top: $space-sm;
+  }
+}
+
+.page__title {
+  margin-top: $space-md;
 }
 
 // Site footer
+// Hairline orange gradient along the top edge, echoing the accent quietly
 .site-footer {
   text-align: center;
-  padding: $space-md;
+  padding: $space-lg $space-md;
   font-size: 0.85rem;
-  opacity: 0.7;
+  opacity: 0.8;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(to right, transparent, rgba(232, 84, 42, 0.35), transparent) 1;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-md;
+  margin-bottom: $space-sm;
+}
+
+.site-footer__links a:hover,
+.site-footer__links a:focus {
+  color: $color-accent-text;
 }

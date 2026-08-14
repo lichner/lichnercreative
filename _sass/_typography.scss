@@ -8,6 +8,27 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-weight: 700;
+  color: $color-white;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+p + p {
+  margin-top: $space-md;
+}
+
+strong {
+  color: $color-white;
 }
 
 // Visually hidden but accessible to screen readers
