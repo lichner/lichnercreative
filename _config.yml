@@ -31,13 +31,12 @@ exclude:
   - prompt_initial.md
   - "*.sh"
   - vendor
-  - _config.yml.bak
+  - _to_delete
 
 # Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
 
 # Default front matter
 defaults:

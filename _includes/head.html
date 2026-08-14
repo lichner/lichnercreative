@@ -3,7 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#39444E">
 
-{% seo %}
+{% seo title=false %}
+<title>{% if page.url == "/" %}{{ site.title }} | IT Consulting Perth{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
 {% include schema.html %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
