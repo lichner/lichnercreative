@@ -32,6 +32,7 @@ exclude:
   - "*.sh"
   - vendor
   - _to_delete
+  - assets/images/andreas-nerlich.jpg  # portrait source; the faded WebP is what ships
 
 # Plugins
 plugins:

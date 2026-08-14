@@ -209,6 +209,86 @@ input:focus {
   }
 }
 
+// Two columns from md up: content left, architecture sketch right.
+// The sketch sits over the faint ">_" glyph, which stays as texture behind it.
+.hero__inner {
+  @include respond-to(md) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+    gap: $space-lg;
+    align-items: center;
+  }
+}
+
+// Architecture sketch — line-art at watermark-plus opacity. Strokes carry
+// their own transparency, so the figure needs no extra filters.
+.hero__art {
+  display: none;
+  margin: 0;
+
+  @include respond-to(md) {
+    display: block;
+    justify-self: end;
+    align-self: center;
+
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+  }
+}
+
+// About page — media-object layout: portrait in a fixed column,
+// bio text in its own column. No text wrap around the image.
+.about-grid {
+  margin-top: $space-lg;
+
+  @include respond-to(md) {
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+    gap: $space-lg;
+    align-items: start;
+    margin-top: $space-xl;
+  }
+}
+
+// Founder portrait — desaturated and slightly translucent so it settles
+// into the background. The edge fade is baked into the image alpha
+// (andreas-nerlich-hero.webp), so no mask is needed.
+.about-portrait {
+  margin: 0 0 $space-md;
+  max-width: 250px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: grayscale(70%) contrast(1.02) brightness(0.96);
+    opacity: 0.85;
+  }
+
+  figcaption {
+    margin-top: $space-sm; // clear of the portrait, below the fade
+    font-size: 0.85rem;
+    color: $color-muted;
+
+    strong {
+      display: block;
+      color: $color-white;
+    }
+  }
+}
+
+.about-bio {
+  @include respond-to(md) {
+    > p:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
 .hero__title {
   max-width: 16ch;
 }

@@ -6,18 +6,76 @@ image: /assets/images/og-image.png
 ---
 
 <section class="hero" aria-label="Introduction">
-  <div class="container">
-    <h1 class="hero__title">Technology consulting for businesses ready to scale.</h1>
-    <p class="hero__sub">
-      Lichner Creative is a Perth-based IT consulting company. We design
-      cloud platforms, connect systems and data, build software, and
-      deliver automation and AI your own team runs. Deep expertise across
-      Microsoft, Azure and Databricks.
-    </p>
-    <div class="hero__cta">
-      <a href="{{ '/contact/' | relative_url }}" class="btn">Get in touch</a>
-      <a href="{{ '/services/' | relative_url }}" class="btn btn--ghost">See what we do</a>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <h1 class="hero__title">Technology consulting for businesses ready to scale.</h1>
+      <p class="hero__sub">
+        Lichner Creative is a Perth-based IT consulting company. We design
+        cloud platforms, connect systems and data, build software, and
+        deliver automation and AI your own team runs. Deep expertise across
+        Microsoft, Azure and Databricks.
+      </p>
+      <div class="hero__cta">
+        <a href="{{ '/contact/' | relative_url }}" class="btn">Get in touch</a>
+        <a href="{{ '/services/' | relative_url }}" class="btn btn--ghost">See what we do</a>
+      </div>
     </div>
+    <figure class="hero__art" aria-hidden="true">
+      <!-- Architecture sketch: systems connected through a hub into a terminal -->
+      <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <!-- connection lines -->
+        <g stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="1 7" stroke-linecap="round">
+          <path d="M160 110 V74"/>
+          <path d="M231 160 H262"/>
+          <path d="M160 211 V244"/>
+          <path d="M89 160 H58"/>
+        </g>
+        <!-- cloud, top -->
+        <g stroke="rgba(255,255,255,0.30)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M132 62 a14 14 0 0 1 13 -19 a17 17 0 0 1 32 -5 a13 13 0 0 1 11 24 z"/>
+        </g>
+        <!-- database, right -->
+        <g stroke="rgba(255,255,255,0.30)" stroke-width="2">
+          <ellipse cx="282" cy="140" rx="19" ry="7"/>
+          <path d="M263 140 v38 a19 7 0 0 0 38 0 v-38"/>
+          <path d="M263 159 a19 7 0 0 0 38 0" stroke="rgba(255,255,255,0.18)"/>
+        </g>
+        <!-- systems, bottom -->
+        <g stroke="rgba(255,255,255,0.30)" stroke-width="2">
+          <rect x="118" y="250" width="34" height="26" rx="4"/>
+          <rect x="162" y="250" width="34" height="26" rx="4"/>
+          <path d="M126 262 h18 M126 268 h12" stroke="rgba(255,255,255,0.18)"/>
+          <path d="M170 262 h18 M170 268 h12" stroke="rgba(255,255,255,0.18)"/>
+        </g>
+        <!-- api nodes, left -->
+        <g stroke="rgba(255,255,255,0.30)" stroke-width="2">
+          <circle cx="40" cy="140" r="11"/>
+          <circle cx="26" cy="176" r="7"/>
+          <circle cx="52" cy="182" r="5"/>
+          <path d="M34 148 l-4 20 M46 148 l4 28" stroke="rgba(255,255,255,0.18)"/>
+        </g>
+        <!-- terminal window, centre -->
+        <g stroke="rgba(255,255,255,0.34)" stroke-width="2">
+          <rect x="89" y="110" width="142" height="101" rx="8"/>
+          <path d="M89 134 h142"/>
+        </g>
+        <circle cx="104" cy="122" r="3" fill="rgba(232,84,42,0.55)"/>
+        <circle cx="116" cy="122" r="3" fill="rgba(255,255,255,0.25)"/>
+        <circle cx="128" cy="122" r="3" fill="rgba(255,255,255,0.25)"/>
+        <!-- prompt mark, accent -->
+        <g stroke="rgba(232,84,42,0.75)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M108 154 l16 15 l-16 15"/>
+          <path d="M134 184 h20"/>
+        </g>
+        <!-- endpoint dots -->
+        <g fill="rgba(232,84,42,0.45)">
+          <circle cx="160" cy="74" r="3"/>
+          <circle cx="262" cy="160" r="3"/>
+          <circle cx="160" cy="244" r="3"/>
+          <circle cx="58" cy="160" r="3"/>
+        </g>
+      </svg>
+    </figure>
   </div>
 </section>
 

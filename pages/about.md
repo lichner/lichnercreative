@@ -4,6 +4,19 @@ description: "Perth IT consulting company with an employed team and senior speci
 permalink: /about/
 ---
 
+<div class="about-grid" markdown="1">
+
+<figure class="about-portrait">
+  <img src="{{ '/assets/images/andreas-nerlich-hero.webp' | relative_url }}"
+       alt="Andreas Nerlich, founder of Lichner Creative"
+       width="500"
+       height="500"
+       loading="lazy">
+  <figcaption><strong>Andreas Nerlich</strong>Founder, Solutions Architect</figcaption>
+</figure>
+
+<div class="about-bio" markdown="1">
+
 Lichner Creative Pty Ltd is an IT consulting company based in Perth,
 Western Australia. We work with an employed team and a trusted network of
 senior specialist subcontractors, sized to each engagement. Clients get
@@ -35,3 +48,7 @@ We work in English and German. Based in Perth, working across WA and
 remote.
 
 [Get in touch](/contact/){: .btn}
+
+</div>
+
+</div>
