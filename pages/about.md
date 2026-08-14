@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Lichner Creative Pty Ltd is a Perth-based IT consulting company. An employed team and senior specialist network, led by an architect with 25 years in enterprise IT."
+description: "Perth IT consulting company with an employed team and senior specialist network, led by an architect with 25 years in enterprise IT."
 permalink: /about/
 ---
 
@@ -15,7 +15,7 @@ with a career in enterprise software since 2000. His first decade was
 spent building production systems in Europe, including for one of
 Germany's leading car makers. In Perth he led the Modern Applications
 practice and the Data + AI and Integration business at Empired across
-Australia and New Zealand, and after its acquisition served as Director of
+Australia and NZ, and after its acquisition served as Director of
 Insights &amp; Data and Microsoft Solution Specialist Lead ANZ at
 Capgemini.
 

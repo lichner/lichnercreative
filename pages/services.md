@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "Cloud architecture, integration and data foundations, software development, DevOps and automation with AI. Perth-based IT consulting across Microsoft, Azure and Databricks."
+description: "Cloud architecture, integration and data, software development, DevOps and AI services. Perth IT consulting across Microsoft, Azure and Databricks."
 permalink: /services/
 ---
 
@@ -64,7 +64,7 @@ When a customer, a job or an invoice means the same thing in every
 system, reporting gets easy and AI gets useful.
 
 Years of leading integration practices for enterprises across Australia
-and New Zealand sit behind this service. It is the least visible work we do, and
+and NZ sit behind this service. It is the least visible work we do, and
 the work with the longest payoff.
 
 ## Automation and AI {#ai}
